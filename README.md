@@ -1,72 +1,144 @@
-# NativeHelix Public Core
+# NativeHelix
 
-> AI-Native Skills and Capabilities Toolkit — public candidate v0.1.
+> An AI-Native Skills and Capabilities Toolkit for designing governed agents, workflows, harnesses, evaluation, and human authority.
 
-NativeHelix packages a working set of AI-native product and architecture practices into reusable Skills, Capability contracts, patterns, checklists, templates, and adoption guidance.
+[![Release](https://img.shields.io/github/v/release/nickzhuchen66/nativehelix)](https://github.com/nickzhuchen66/nativehelix/releases)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](LICENSE)
 
-This repository is for product leaders, architects, and builders who need to design agent systems with explicit user value, technical boundaries, evidence, permissions, failure recovery, and human authority.
+NativeHelix turns practical AI-native product and architecture methods into reusable Agent Skills, capability contracts, patterns, checklists, templates, and examples.
 
-## What you can use
+Use it when you need an agent system to do more than produce a plausible answer: it should pursue an explicit user outcome, operate inside technical and permission boundaries, preserve evidence, recover from failure, and keep final authority with humans.
 
-- **4 Codex Skill packages** for capability ingestion, AI-native architecture design, agent workflow design, and agent-harness review.
-- **15 Capability domains** covering product architecture, context, workflows, harnesses, evaluation, evidence, memory, loops, operational control, adaptation, multi-agent coordination, bounded improvement, and reference architecture.
-- **Public governance guidance** that separates product, architecture, implementation, review, and final human authority.
-- **A reference architecture** and a synthetic worked example.
+## Start in five minutes
 
-## Start here
+Clone the repository:
 
-1. Read [Getting started](docs/GETTING_STARTED.md).
-2. Browse the [Capability index](04_Capabilities/INDEX.md).
-3. Choose a Skill from the [Skill catalog](05_Skills/SKILL_CATALOG.md).
-4. Install only the Skills you need by following [Skill installation](docs/SKILL_INSTALLATION.md).
-5. Review the [public dependencies](docs/PUBLIC_DEPENDENCIES.md).
-6. Walk through the [weekly project update agent example](examples/weekly-project-update-agent/README.md).
+```bash
+git clone https://github.com/nickzhuchen66/nativehelix.git
+cd nativehelix
+```
+
+Choose one Skill and copy its complete package into your repository. For example:
+
+```bash
+mkdir -p .agents/skills
+cp -R 05_Skills/cross_functional/design-agent-workflow .agents/skills/
+```
+
+Start a fresh agent task and ask for work that matches the Skill, for example:
+
+```text
+Design a bounded workflow for this product outcome, including owners,
+permissions, evidence, failure recovery, human gates, and stop conditions.
+```
+
+Read the selected `SKILL.md` completely before use. See [Skill installation](docs/SKILL_INSTALLATION.md) for repository-local and personal installation options.
+
+## Choose your entry point
+
+| What you want to do | Start here |
+|---|---|
+| Design or reshape an AI-native product/system architecture | [`design-ai-native-architecture`](05_Skills/architect/design-ai-native-architecture/SKILL.md) |
+| Turn a product outcome into a bounded multi-stage workflow | [`design-agent-workflow`](05_Skills/cross_functional/design-agent-workflow/SKILL.md) |
+| Review an agent harness and calibrate technical readiness | [`review-agent-harness`](05_Skills/architect/review-agent-harness/SKILL.md) |
+| Extract reusable capabilities from a repository or document set | [`ingest-project-capabilities`](05_Skills/architect/ingest-project-capabilities/SKILL.md) |
+| Reuse an individual contract, pattern, checklist, or template | [Capability index](04_Capabilities/INDEX.md) |
+| Learn through a complete fictional scenario | [Weekly project update agent](examples/weekly-project-update-agent/README.md) |
+
+## What is included
+
+### Four installable Agent Skills
+
+Each Skill is a self-contained package with a `SKILL.md` entry point and any required `references/`, `assets/`, `agents/`, or `scripts/` resources.
+
+| Skill | Primary purpose |
+|---|---|
+| [`design-ai-native-architecture`](05_Skills/architect/design-ai-native-architecture/SKILL.md) | Define system layers, boundaries, interfaces, permissions, evidence, recovery, and evolution |
+| [`design-agent-workflow`](05_Skills/cross_functional/design-agent-workflow/SKILL.md) | Convert a frozen product outcome into tasks, states, gates, ownership, and stop conditions |
+| [`review-agent-harness`](05_Skills/architect/review-agent-harness/SKILL.md) | Review execution control, evaluation, cost, safety boundaries, and production-readiness evidence |
+| [`ingest-project-capabilities`](05_Skills/architect/ingest-project-capabilities/SKILL.md) | Extract reusable practices while preserving source, maturity, ownership, and evidence boundaries |
+
+Browse package status and ownership in the [Skill catalog](05_Skills/SKILL_CATALOG.md).
+
+### Fifteen capability domains
+
+The capability library covers:
+
+- product architecture and human–AI collaboration;
+- AI-native system architecture and context engineering;
+- workflow, harness, loop, and operational control engineering;
+- evaluation, grounding, evidence, memory, and knowledge;
+- domain adaptation and multi-agent coordination;
+- bounded self-improvement and reference-architecture interfaces.
+
+Every domain has a `CAPABILITY.md` boundary and links to reusable contracts, patterns, checklists, or templates. Browse all domains in the [Capability index](04_Capabilities/INDEX.md).
+
+### Governance, architecture, and examples
+
+- [Public operating model](00_Governance/PUBLIC_OPERATING_MODEL.md) — separates product, architecture, implementation, review, and final human authority.
+- [Role and authority model](00_Governance/ROLE_AND_AUTHORITY_MODEL.md) — clarifies who owns decisions and who must not self-approve.
+- [AI-native reference architecture](06_Reference_Assets/technical_architectures/AI_NATIVE_REFERENCE_ARCHITECTURE_v0.1.md) — a reusable system-level architecture reference.
+- [Weekly project update agent](examples/weekly-project-update-agent/README.md) — a synthetic product brief, architecture boundary, and workflow example.
+
+## How NativeHelix fits into a project
+
+NativeHelix provides reusable design material; your project remains the authority for its own users, outcomes, architecture, permissions, tools, credentials, data, costs, and release decisions.
+
+A practical adoption sequence is:
+
+1. define the user outcome and final artifact;
+2. select one Skill or a small set of Capability assets;
+3. adapt them to the project's actual constraints and authority model;
+4. separate observed evidence from assumptions and recommendations;
+5. validate permissions, state, recovery, and product value in the real environment;
+6. retain human approval for consequential or external actions.
+
+See [Getting started](docs/GETTING_STARTED.md) and the [Capability guide](docs/CAPABILITY_GUIDE.md).
 
 ## Repository map
 
 ```text
 00_Governance/       Public operating model and role boundaries
-04_Capabilities/     Reusable capability domains, contracts, patterns and checklists
-05_Skills/           Installable Skill packages
+04_Capabilities/     15 reusable capability domains
+05_Skills/           4 installable Agent Skill packages
 06_Reference_Assets/ Public reference architecture
-docs/                Getting-started, installation and adoption guidance
+docs/                Getting-started, installation, dependency, and boundary guides
 examples/            Synthetic examples with no private project dependency
 ```
 
-## Included Skills
+## Requirements and dependencies
 
-| Skill | Use it when you need to |
-|---|---|
-| `design-ai-native-architecture` | design or reshape an AI-native system architecture |
-| `ingest-project-capabilities` | extract reusable capabilities from a repository or document set |
-| `review-agent-harness` | review an agent harness and calibrate readiness |
-| `design-agent-workflow` | design a bounded agent or human–AI workflow |
+NativeHelix Public Core is primarily documentation and Agent Skill packages. Browsing and adapting it requires no application runtime, package manager, database, hosted service, paid API, or environment variable.
 
-Each Skill is self-contained within its directory and may include `references/`, `assets/`, `agents/`, or `scripts/` resources.
+- Use Git or a browser ZIP download to obtain the repository.
+- Use a host that supports the `SKILL.md` package shape to discover Skills.
+- Ruby is optional and is used only by the included capability-manifest validation example.
+- Copying a Skill does not grant it filesystem, network, credential, tool, or external-write permission.
 
-## Language
+See [Public dependencies](docs/PUBLIC_DEPENDENCIES.md) for the complete boundary.
 
-The repository entry documentation and Skill instructions are in English. Some
-Capability contracts and patterns retain Chinese or bilingual terminology in
-v0.1. A fully English Capability edition is a possible later release, not a
-claim of this candidate.
+## Maturity and limitations
 
-## What NativeHelix is not
+Public Core v0.1.0 is a documentation and toolkit release. It is not an SDK, runtime, hosted service, certification, security control, compliance method, or production-ready reference implementation.
 
-Public Core v0.1 is not an SDK, runtime, hosted service, certification, security control, compliance method, or production-ready reference implementation. Detailed design and passing tests do not prove product value or production readiness. Apply the assets proportionately and validate them in your own environment.
+The included Skill packages have passed bounded package and reference checks but have not all been independently forward-tested across multiple hosts. Some Capability documents retain Chinese or bilingual terminology. Detailed design and passing checks do not prove product value, security, legal sufficiency, or production readiness.
 
-## Public-core boundary
+See [Verification notes](docs/CANDIDATE_VERIFICATION.md) for the checks performed and their limits.
 
-This distribution intentionally excludes private project profiles, source snapshots, project adapters, management control planes, handoff history, review history, and private evidence. See [Public Core boundary](docs/PUBLIC_CORE_BOUNDARY.md).
+## Public boundary
+
+This distribution excludes private project profiles, source snapshots, project adapters, management control planes, handoff and review history, credentials, and private evidence. See the [Public Core boundary](docs/PUBLIC_CORE_BOUNDARY.md).
+
+## Contributing and security
+
+- Read [Contributing](CONTRIBUTING.md) before proposing a Skill, Capability, example, or documentation change.
+- Follow [Security](SECURITY.md) when reporting a suspected secret, private-data exposure, or unsafe instruction.
+- Review changes in a branch or pull request before updating the public default branch.
 
 ## License
 
-Unless a file states otherwise, this public candidate is provided under [CC BY 4.0](LICENSE). Attribution: CZ / NativeHelix.
+Unless a file states otherwise, NativeHelix Public Core is licensed under [CC BY 4.0](LICENSE). Attribution: CZ / NativeHelix.
 
-## Status
+## Release status
 
-This directory is a local publication candidate for human review. It has not yet replaced the content in the public GitHub repository.
-
-The bounded structural checks performed for this candidate are recorded in
-[Candidate verification](docs/CANDIDATE_VERIFICATION.md). They are not a
-security, privacy, legal, or production-readiness certification.
+Current public release: **v0.1.0 — Public Core**. See the [GitHub Releases page](https://github.com/nickzhuchen66/nativehelix/releases) and [changelog](CHANGELOG.md).

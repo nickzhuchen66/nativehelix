@@ -1,0 +1,49 @@
+name: Documentation or toolkit issue
+description: Report an error, broken link, unclear instruction, or package problem.
+title: "[Issue]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve NativeHelix. Do not include secrets, private repository content, personal data, or authenticated session material.
+  - type: input
+    id: artifact
+    attributes:
+      label: Affected artifact
+      description: Provide the repository-relative path or public URL.
+      placeholder: 05_Skills/cross_functional/design-agent-workflow/SKILL.md
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+      description: Describe the observed behavior and why it is a problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      description: Describe the expected wording, behavior, or package structure.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and reproduction
+      description: List the steps, host, files, or checks that support the report. Remove private information.
+  - type: textarea
+    id: limits
+    attributes:
+      label: Known limits
+      description: State what you did not verify or where the issue may not apply.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I have not included secrets, private data, credentials, or private repository content.
+          required: true

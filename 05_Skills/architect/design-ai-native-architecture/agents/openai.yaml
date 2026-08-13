@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design AI-Native Architecture"
+  short_description: "Design governed AI-native system architecture blueprints"
+  default_prompt: "Use $design-ai-native-architecture to design an AI-native architecture for this project."

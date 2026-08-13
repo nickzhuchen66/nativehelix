@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Agent Harness"
+  short_description: "Review agent execution controls, evaluation, and readiness"
+  default_prompt: "Use $review-agent-harness to review this agent system harness and its production readiness."

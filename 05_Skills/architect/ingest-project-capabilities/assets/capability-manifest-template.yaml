@@ -1,0 +1,18 @@
+schema_version: "0.2"
+source_id: "<source-id>"
+source_scope: "<source-scope>"
+generated_on: "<YYYY-MM-DD>"
+capabilities:
+  - id: "<capability-id>"
+    name: "<capability-name>"
+    capability_class: "technical"
+    primary_owner: "AI-Native Architect"
+    consulted_roles: ["AI-Native CPO"]
+    implementation_maturity: "concept"
+    transfer_maturity: "single_project"
+    evidence_scope: "<bounded-evidence-scope>"
+    evidence: []
+    invariants: []
+    limits: []
+    reusable_forms: []
+    host_specific_parts: []

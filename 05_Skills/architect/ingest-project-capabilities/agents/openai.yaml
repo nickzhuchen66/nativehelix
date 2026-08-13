@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ingest Project Capabilities"
+  short_description: "Extract and baseline reusable capabilities from projects"
+  default_prompt: "Use $ingest-project-capabilities to extract reusable capabilities from this project."

@@ -1,0 +1,65 @@
+name: Skill, capability, or documentation proposal
+description: Propose a focused addition or improvement to NativeHelix.
+title: "[Proposal]: "
+labels:
+  - enhancement
+body:
+  - type: dropdown
+    id: artifact_type
+    attributes:
+      label: Proposal type
+      options:
+        - Skill
+        - Capability contract, pattern, checklist, or template
+        - Example
+        - Documentation
+        - Governance or authority boundary
+    validations:
+      required: true
+  - type: textarea
+    id: user_problem
+    attributes:
+      label: User problem
+      description: What user or adopter problem should this solve?
+    validations:
+      required: true
+  - type: input
+    id: artifact
+    attributes:
+      label: Exact artifact
+      description: Name the file or package you propose to add or change.
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: Primary owner
+      description: Identify one person responsible for the proposal.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and recommendation
+      description: Separate observed evidence from your recommendation.
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Applicability and limitations
+      description: Where should this apply, where should it not apply, and what remains unproven?
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Proposed validation
+      description: How could reviewers verify the change without overstating readiness?
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: This proposal contains no credentials, private data, private repository content, or unapproved external side effects.
+          required: true

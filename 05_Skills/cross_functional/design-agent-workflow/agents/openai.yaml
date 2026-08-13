@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Agent Workflow"
+  short_description: "Design agent workflows, states, gates, and recovery paths"
+  default_prompt: "Use $design-agent-workflow to design the agent workflow for this use case."
